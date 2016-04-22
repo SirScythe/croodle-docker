@@ -17,7 +17,8 @@ WORKDIR /var/www/html
 RUN rm -rf * \
   && curl -SL -o croodle.tgz https://github.com/jelhan/croodle/releases/download/${CROODLE_VERSION}/croodle-${CROODLE_VERSION}.tar.gz \
   && tar zxf croodle.tgz \
-  && rm croodle.tgz
+  && rm croodle.tgz \
+  && chmod 777 data
 
 # v0.3.0 is zipped.
 # RUN rm -rf * \
