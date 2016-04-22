@@ -22,7 +22,7 @@ RUN rm -rf * \
   && rm croodle.tgz
 
 # v0.3.0 is zipped.
-RUN rm -rf * \
-  && curl -SL -o croodle.zip https://github.com/jelhan/croodle/releases/download/v0.3.0/croodle-v0.3.0.zip \
-  && unzip croodle.zip \
-  && rm croodle.zip
+# RUN rm -rf * \
+#   && curl -SL -o croodle.zip https://github.com/jelhan/croodle/releases/download/v0.3.0/croodle-v0.3.0.zip \
+#   && unzip croodle.zip \
+#   && rm croodle.zip
