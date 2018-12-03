@@ -9,7 +9,7 @@ MAINTAINER Bernhard Fürst, bernhard.fuerst@fuerstnet.de
 
 # You may overwrite the version.
 # Use a release tag from https://github.com/jelhan/croodle/releases.
-ENV CROODLE_VERSION v0.4.0-alpha4
+ENV CROODLE_VERSION v0.5.6
 
 WORKDIR /var/www/html
 
@@ -20,9 +20,8 @@ RUN rm -rf * \
   && rm croodle.tgz \
   && chmod 777 data
 
-# v0.3.0 is zipped.
-# RUN rm -rf * \
-#   && apt-get update && apt-get install -y unzip \
-#   && curl -SL -o croodle.zip https://github.com/jelhan/croodle/releases/download/v0.3.0/croodle-v0.3.0.zip \
-#   && unzip croodle.zip \
-#   && rm croodle.zip
+# Install Cron
+RUN apt-get update && apt-get -y install -qq cron
+ADD crontab /etc/cron.d/croodle
+RUN chmod 0644 /etc/cron.d/croodle
+RUN crontab /etc/cron.d/croodle
