@@ -9,7 +9,7 @@ MAINTAINER Bernhard Fürst, bernhard.fuerst@fuerstnet.de
 
 # You may overwrite the version.
 # Use a release tag from https://github.com/jelhan/croodle/releases.
-ENV CROODLE_VERSION v0.5.6
+ENV CROODLE_VERSION v0.6.2
 
 WORKDIR /var/www/html
 
